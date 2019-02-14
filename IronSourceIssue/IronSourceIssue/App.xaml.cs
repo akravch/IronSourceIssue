@@ -1,5 +1,4 @@
-﻿using System;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
@@ -7,11 +6,11 @@ namespace IronSourceIssue
 {
     public partial class App : Application
     {
-        public App()
+        public App(IRewardedVideoService rewardedVideoService)
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new MainPage(rewardedVideoService);
         }
 
         protected override void OnStart()
